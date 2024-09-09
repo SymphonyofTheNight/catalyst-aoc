@@ -100,14 +100,17 @@ const Carousel = ({ className, title, pageSize = 4, products, ...props }: Props)
       aria-labelledby={titleId}
       aria-roledescription="carousel"
       className={cn('relative', className)}
+      // className={cn('relative 2xl:px-[10vw]', className)}
       onKeyDownCapture={handleKeyDown}
       role="region"
       {...props}
     >
-      <div className="flex items-center justify-between">
+      <div className={cn("flex items-center justify-between")}>
+
         <h2 className="text-3xl font-black lg:text-4xl" id={titleId}>
           {title}
         </h2>
+
         <span className="no-wrap flex">
           <button
             aria-label="Previous products"
@@ -135,9 +138,10 @@ const Carousel = ({ className, title, pageSize = 4, products, ...props }: Props)
             <span className="sr-only">Next slide</span>
           </button>
         </span>
+
       </div>
 
-      <div className="-mx-2 overflow-hidden px-2" ref={carouselRef}>
+      <div className={cn("-mx-2 overflow-hidden px-2")} ref={carouselRef}>
         <div className="-mx-4 mb-16 mt-8 flex lg:mt-10">
           {groupedProducts.map((group, index) => (
             <div

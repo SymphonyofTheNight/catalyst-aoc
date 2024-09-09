@@ -14,6 +14,7 @@ const config = {
         primary: '#053FB0',
         secondary: '#3071EF',
         white: '#FFFFFF',
+        clr: "#132448",
         error: {
           DEFAULT: '#AD0000',
           secondary: '#C62828',
@@ -37,6 +38,9 @@ const config = {
       borderColor: {
         DEFAULT: '#CFD8DC',
       },
+      backgroundColor: {
+        "btnclr": "#264da3"
+      },
       keyframes: {
         revealVertical: {
           '0%': { transform: 'translateY(-100%)' },
@@ -46,6 +50,12 @@ const config = {
       animation: {
         revealVertical: 'revealVertical 400ms forwards cubic-bezier(0, 1, 0.25, 1)',
       },
+      backgroundImage: {
+        "hero-bg": "url('https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/is-banner-with-puppy-2x.png?t=1725594856')",
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif']
+      }
     },
   },
 

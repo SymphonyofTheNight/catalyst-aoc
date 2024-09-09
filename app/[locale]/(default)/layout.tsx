@@ -28,6 +28,13 @@ const LayoutQuery = graphql(
   [HeaderFragment, FooterFragment],
 );
 
+//! custom import 
+import { cn } from '~/lib/utils';
+
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
+
 export default async function DefaultLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
 
@@ -44,7 +51,8 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
     <>
       <Header cart={<Cart />} data={data.site} />
 
-      <main className="flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0">
+      <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0", '2xl:max-w-none w-full xl:p-0', montserrat.className)}>
+        {/* <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0")}> */}
         {children}
       </main>
 

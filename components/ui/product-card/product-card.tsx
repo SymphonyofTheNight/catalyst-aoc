@@ -14,15 +14,15 @@ interface Image {
 type Price =
   | string
   | {
-      type: 'sale';
-      currentValue: string;
-      previousValue: string;
-    }
+    type: 'sale';
+    currentValue: string;
+    previousValue: string;
+  }
   | {
-      type: 'range';
-      minValue: string;
-      maxValue: string;
-    };
+    type: 'range';
+    minValue: string;
+    maxValue: string;
+  };
 
 interface Product {
   id: string;
@@ -58,13 +58,7 @@ const ProductCard = ({
 }: Props) => (
   <div className={cn('group relative flex flex-col overflow-visible', className)} {...props}>
     <div className="relative flex justify-center pb-3">
-      <div
-        className={cn('relative flex-auto', {
-          'aspect-square': imageSize === 'square',
-          'aspect-[4/5]': imageSize === 'tall',
-          'aspect-[7/5]': imageSize === 'wide',
-        })}
-      >
+      <div className={cn('relative flex-auto', { 'aspect-square': imageSize === 'square', 'aspect-[4/5]': imageSize === 'tall', 'aspect-[7/5]': imageSize === 'wide', })}>
         {image ? (
           <BcImage
             alt={image.altText}
