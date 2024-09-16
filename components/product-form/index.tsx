@@ -47,7 +47,9 @@ const productItemTransform = (p: FragmentOf<typeof ProductItemFragment>) => {
   };
 };
 
+// ! submitting
 export const Submit = ({ data: product }: Props) => {
+
   const { formState } = useFormContext();
   const { isSubmitting } = formState;
 
@@ -59,6 +61,9 @@ export const Submit = ({ data: product }: Props) => {
 };
 
 export const ProductForm = ({ data: product }: Props) => {
+
+  console.log(product);
+
   const t = useTranslations('Product.Form');
   const m = useTranslations('AddToCart');
   const productOptions = removeEdgesAndNodes(product.productOptions);
@@ -66,7 +71,9 @@ export const ProductForm = ({ data: product }: Props) => {
   const { handleSubmit, register, ...methods } = useProductForm();
 
   const productFormSubmit = async (data: ProductFormData) => {
+
     const result = await handleAddToCart(data, product);
+
     const quantity = Number(data.quantity);
 
     if (result.error) {
@@ -90,6 +97,7 @@ export const ProductForm = ({ data: product }: Props) => {
       ],
     });
 
+    //!prompt
     toast.success(
       () => (
         <div className="flex items-center gap-3">

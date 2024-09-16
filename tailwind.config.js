@@ -52,6 +52,11 @@ const config = {
       },
       backgroundImage: {
         "hero-bg": "url('https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/is-banner-with-puppy-2x.png?t=1725594856')",
+        "hp-content-bg": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/starry-bg-200px.png')",
+        "parallax-1": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/is-parallax-pattern-bg.png?t=1647995595&_gl=1*qnpn72*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0Nzk5NTUyMi41NC4xLjE2NDc5OTU2MDAuNTg.')",
+        "kid-sleep": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/usa.png?t=1647849295&_gl=1*mkoz7y*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4NDkyODIuNTk.')",
+        "affirm": "https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/affirm-bg.webp",
+        "parallax-2": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/is-parallax-pattern-bg.png?t=1647995595&_gl=1*qnpn72*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0Nzk5NTUyMi41NC4xLjE2NDc5OTU2MDAuNTg')",
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']

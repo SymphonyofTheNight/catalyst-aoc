@@ -30,9 +30,10 @@ const LayoutQuery = graphql(
 
 //! custom import 
 import { cn } from '~/lib/utils';
-
 import { Montserrat } from 'next/font/google'
+import { cookies } from 'next/headers';
 
+//! setting font to use
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 
 export default async function DefaultLayout({ children, params: { locale } }: Props) {
@@ -47,6 +48,10 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
 
   const messages = await getMessages({ locale });
 
+  const cartId = cookies().get('cartId')?.value;
+
+  console.log(cartId);
+
   return (
     <>
       <Header cart={<Cart />} data={data.site} />
@@ -59,8 +64,7 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
       <Suspense fallback={null}>
         <NextIntlClientProvider
           locale={locale}
-          messages={{ Product: messages.Product ?? {}, AddToCart: messages.AddToCart ?? {} }}
-        >
+          messages={{ Product: messages.Product ?? {}, AddToCart: messages.AddToCart ?? {} }}>
           <ProductSheet />
         </NextIntlClientProvider>
       </Suspense>

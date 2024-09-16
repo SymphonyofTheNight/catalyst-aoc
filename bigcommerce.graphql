@@ -248,6 +248,17 @@ type AssignCartToCustomerResult {
   cart: Cart
 }
 
+"""Scope which describes how to cache the query"""
+enum CacheControlScope {
+  """
+  Private means that query result is available only for the particular user.
+  """
+  PRIVATE
+
+  """Public means that query result is available for all users."""
+  PUBLIC
+}
+
 """Cart gift certificate input object"""
 input CartGiftCertificateInput {
   """GiftCertificate-provided name that will appear in the control panel."""
@@ -3794,15 +3805,6 @@ enum CouponType {
   SHIPPING_DISCOUNT
 }
 
-"""Details of the credit card payment instrument."""
-type CreditCardPaymentInstrument {
-  """Credit card brand."""
-  brand: String!
-
-  """Last four digits of the credit card number."""
-  last4: String!
-}
-
 """Currency details."""
 type Currency {
   """Currency ID."""
@@ -4302,12 +4304,6 @@ type Geography {
   ): [Country!]
 }
 
-"""The details of a gift certificate payment instrument."""
-type GiftCertificatePaymentInstrument {
-  """The gift certificate code."""
-  code: String!
-}
-
 """Gift wrapping for product"""
 type GiftWrapping {
   """Gift wrapping id."""
@@ -4619,6 +4615,15 @@ enum LimitInputBy {
   LOWEST_VALUE
   NO_LIMIT
   RANGE
+}
+
+"""A store locale."""
+type Locale {
+  """A locale code."""
+  code: String!
+
+  """Indicates whether this is the default locale."""
+  isDefault: Boolean!
 }
 
 """A connection to a list of items."""
@@ -5714,16 +5719,6 @@ type OrderWithPayments implements Node & BaseOrder {
   """The ID of an object."""
   id: ID!
 
-  """The list of payments for an order."""
-  payments(
-    """A filter to allow getting payments of a certain status."""
-    filters: PaymentsFiltersInput
-    before: String
-    after: String
-    first: Int
-    last: Int
-  ): PaymentsConnection!
-
   """Order ID."""
   entityId: Int!
 
@@ -5979,56 +5974,6 @@ type PasswordFormFieldValue implements CustomerFormFieldValue {
 
   """The name of the form field that the value is for."""
   name: String!
-}
-
-"""A payment for an order."""
-type Payment {
-  """The id of the payment method."""
-  paymentMethodId: String!
-
-  """The name of the payment method."""
-  paymentMethodName: String!
-
-  """The amount of the payment."""
-  amount: Money!
-
-  """The specific details on the type of payment."""
-  detail: PaymentInstrument
-}
-
-"""The specific details of the instrument used for this payment."""
-union PaymentInstrument = GiftCertificatePaymentInstrument | CreditCardPaymentInstrument
-
-"""The status of a payment."""
-enum PaymentResultStatus {
-  ERROR
-  FAILURE
-  PENDING
-  SUCCESS
-}
-
-"""A connection to the list of payments."""
-type PaymentsConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [PaymentsEdge!]
-}
-
-"""An edge in a connection."""
-type PaymentsEdge {
-  """The item at the end of the edge."""
-  node: Payment!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-"""Filter input for payments."""
-input PaymentsFiltersInput {
-  """The status we want to fetch orders by."""
-  status: PaymentResultStatus
 }
 
 """
@@ -6867,6 +6812,14 @@ type ReCaptchaSettings {
 
   """Indicates whether ReCaptcha is enabled on the storefront."""
   isEnabledOnStorefront: Boolean!
+
+  """Flag indicating if reCaptcha is enabled on checkout."""
+  isEnabledOnCheckout: Boolean!
+
+  """
+  Duration in seconds indicating how long a user is locked out after failed login attempts.
+  """
+  failedLoginLockoutDurationSeconds: Long
 }
 
 """Redirect."""
@@ -7195,6 +7148,9 @@ type Settings {
 
   """Customers settings."""
   customers: CustomersSettings
+
+  """Store locales."""
+  locales: [Locale!]!
 
   """
   The form fields to display on the storefront during customer registration or address creation.
