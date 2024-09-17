@@ -16,6 +16,7 @@ import { LocaleType } from '~/i18n';
 //!custom import
 import { cn } from '~/lib/utils';
 import { BcImage } from '~/components/bc-image';
+import Slider from './custom-template/SlickSlider'
 
 //! import arr
 import { heroBanner } from './ArrData/HeroBanner'
@@ -78,17 +79,8 @@ export default async function Home({ params: { locale } }: Props) {
   //! this is custom
   const BestSelling = removeEdgesAndNodes(data.site.bestSellingProducts);
 
-  // const testinglang = BestSelling && BestSelling.map((item) => {
-  //   return item.productOptions.edges?.map(item => {
-  //     return item && item.node && item.node.entityId;
-  //   })
-  // });
-
-  // console.log(testinglang)
-
   return (
     <>
-
       {/* <Hero /> */}
 
       {/* custom elem hero banner */}
@@ -342,10 +334,31 @@ export default async function Home({ params: { locale } }: Props) {
           </div>
         </div>
       </div>
-      {/* 
-      <div className='bg-red-700 h-[200px] w-full mt-[50px]'>
 
-      </div> */}
+      <Slider />
+
+      <div className='h-auto mt-[25px] mb-[25px] pl-[8vw] pr-[8vw] flex flex-row'>
+        <div className='w-[35%] flex flex-col items-start justify-center'>
+          <h2 className='text-[#132448] font-[700] text-[28px] leading-[24px]'>
+            Still in doubt?
+            <br />
+            Put us to the test.
+          </h2>
+          <p className='text-[#132448] font-[900] text-[16px] mt-[16px] mb-[16px]'>
+            Jaw-dropping prices, same
+            <br />
+            iconic experience.
+          </p>
+          <button>
+            <span className='text-white font-[400] capitalize inline-block bg-[#264da3] border-[#264da3] pt-[12px] pb-[12px] pl-[115px] pr-[115px] rounded-[8px] text-center'>
+              Shop Mattresses
+            </span>
+          </button>
+        </div>
+        <div className='bg-white w-[65%] flex flex-row items-center justify-start'>
+          <img className='h-[22.5rem] w-auto object-contain' src={hpcontent['bed-img']} />
+        </div>
+      </div>
 
     </>
   );

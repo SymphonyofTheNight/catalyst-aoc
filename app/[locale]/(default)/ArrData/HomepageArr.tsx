@@ -13,6 +13,7 @@ interface HpContent {
     "truck-img": string;
     "scroll-img": string;
     "lifetime-img": string;
+    "bed-img": string;
 }
 
 export const hpcontent: HpContent = {
@@ -29,5 +30,6 @@ export const hpcontent: HpContent = {
     "text-affirm": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/c62c99a-affirm-logo-color-.png",
     "truck-img": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/icon-awesome-shipping.png?t=1647918321&_gl=1*bi4oh3*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzkxNjg2Ni41MC4xLjE2NDc5MTg0ODQuNjA.",
     "scroll-img": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/quick-easy-step.png?t=1647918320&_gl=1*bi4oh3*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzkxNjg2Ni41MC4xLjE2NDc5MTg0ODQuNjA.",
-    "lifetime-img": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/lifetime-forever-warranty.png?t=1656318264&_gl=1*191cxap*_ga*ODk3ODY0MTgwLjE2NDg4MDI1OTE.*_ga_WS2VZYPC6G*MTY1NjMxODI1MC4yNzMuMC4xNjU2MzE4NDA2LjYw"
+    "lifetime-img": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/lifetime-forever-warranty.png?t=1656318264&_gl=1*191cxap*_ga*ODk3ODY0MTgwLjE2NDg4MDI1OTE.*_ga_WS2VZYPC6G*MTY1NjMxODI1MC4yNzMuMC4xNjU2MzE4NDA2LjYw",
+    "bed-img": "https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/homepage-still-in-doubt.png"
 }

@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* slick slider buttons */
+
+.slider .slick-prev.slick-arrow {
+    transform: translate(-50%, -50%)!important;
+    top: -32%!important;
+    left: 95%!important;
+}
+
+.slider .slick-next.slick-arrow {
+    transform: translate(-50%, -50%)!important;
+    top: -32%!important;
+    left: 97%!important;
+}
+
+.slider .slick-prev:before{
+    content: "<"!important;
+    cursor: pointer!important;
+    display: inline-block!important;
+    height: 30px!important;
+    width: 30px!important;
+    color: #ffff!important;
+    font-size: 30px!important;
+    font-weight: 900!important;
+    opacity: 1!important;
+}
+
+.slider .slick-next:before{
+    content: ">"!important;
+    cursor: pointer!important;
+    display: inline-block!important;
+    height: 30px!important;
+    width: 30px!important;
+    color: #ffff!important;
+    font-size: 30px!important;
+    font-weight: 900!important;
+    opacity: 1!important;
+}

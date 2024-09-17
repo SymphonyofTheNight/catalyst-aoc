@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.min.js';
 
-import { hpcontent } from '../ArrData/HomepageArr';
+import { ReviewCustomer } from '../ArrData/SlickData';
 import { fetchReviews } from '../api/stamped';
 
 const SlickSlider = () => {
@@ -29,52 +29,24 @@ const SlickSlider = () => {
         };
     }, []);
 
-    console.log(fetchReviews());
+    //* BUTTON STYLING WILL BE ON GLOBAL CSS
 
     return (
-        <div className='bg-parallax-3 bg-fixed bg-center bg-no-repeat bg-cover h-auto w-full pl-[8vw] pr-[8vw] mt-[50px] flex flex-col justify-start relative'>
-            <h3 className='text-[26px] font-[700] text-white pt-[3vh] pb-[3vh]'>See what others think about ICON SLEEP</h3>
-            <div className="slider mb-[3vh]">
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
-                <div>
-                    <div className='border-[2px] border-black h-[225px] flex flex-col justify-start'>
-
-                    </div>
-                </div>
+        <div className='bg-parallax-2 bg-fixed bg-center bg-no-repeat bg-cover h-auto w-full pl-[8vw] pr-[8vw] mt-[4.5vh] flex flex-col justify-start relative'>
+            <h3 className='text-[26px] font-[700] text-white pt-[5.5vh] pb-[3vh]'>See what others think about ICON SLEEP</h3>
+            <div className="slider mb-[4.5vh]">
+                {ReviewCustomer && ReviewCustomer.map(val => {
+                    return (
+                        <div key={val.rating}>
+                            <div className='h-auto flex flex-col justify-start mr-[2.5vw]'>
+                                <img className='h-auto w-[25%] object-contain' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/5star.png?t=1726556331' />
+                                <h2 className='text-white text-[20px] font-[700] pt-[10px]'>{val.title}</h2>
+                                <p className='text-white text-[16px]'>{val.text}</p>
+                                <span className='text-white text-[13px] font-[700]'>{val.name}</span>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     );
