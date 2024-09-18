@@ -1,7 +1,7 @@
 import { removeEdgesAndNodes } from '@bigcommerce/catalyst-client';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-
+import dynamic from 'next/dynamic';
 import { getSessionCustomerId } from '~/auth';
 import { client } from '~/client';
 import { graphql } from '~/client/graphql';
@@ -16,7 +16,12 @@ import { LocaleType } from '~/i18n';
 //!custom import
 import { cn } from '~/lib/utils';
 import { BcImage } from '~/components/bc-image';
-import Slider from './custom-template/SlickSlider'
+
+// import Slider from './custom-template/SlickSlider'
+//! DYNAMICALLY IMPORT
+const Slider = dynamic(() => import('./custom-template/SlickSlider'), {
+  ssr: false,
+});
 
 //! import arr
 import { heroBanner } from './ArrData/HeroBanner'
