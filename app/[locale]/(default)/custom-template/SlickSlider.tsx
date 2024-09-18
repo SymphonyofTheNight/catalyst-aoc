@@ -1,4 +1,5 @@
 // ! PLEASE TAKE NOTE, SETTING THIS UP REQUIRES SOME CONFIGURATION IN tsconfig.json AND NEED TO CREATE A SEPARATE FILE FOR TYPESCRIPT INTERFACE 
+// ! using use client needs to be import dynamically
 "use client";
 
 import { useEffect } from 'react';
@@ -12,7 +13,7 @@ import { fetchReviews } from '../api/stamped';
 
 const SlickSlider = () => {
     useEffect(() => {
-        // Type assertion to let TypeScript know `slick` method exists
+        //! Type assertion to let TypeScript know `slick` method exists
         ($('.slider') as any).slick({
             dots: false,
             infinite: true,
@@ -21,7 +22,7 @@ const SlickSlider = () => {
             slidesToScroll: 4,
         });
 
-        // Cleanup function to destroy Slick Slider on component unmount
+        //! Cleanup function to destroy Slick Slider on component unmount
         return () => {
             if ($('.slider').hasClass('slick-initialized')) {
                 ($('.slider') as any).slick('unslick');

@@ -6,6 +6,9 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
+//! custom import
+import Script from 'next/script';
+
 import '../globals.css';
 
 import { client } from '~/client';
@@ -75,6 +78,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 
   return (
     <html className={`${inter.variable} font-sans`} lang={locale}>
+
       <body className="flex h-screen min-w-[375px] flex-col">
         <Notifications />
         <NextIntlClientProvider locale={locale} messages={{ Providers: messages.Providers ?? {} }}>
@@ -82,7 +86,17 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js"></script>
+        <script type="text/javascript" src="https://cdn1.stamped.io/files/widget.min.js"></script>
+        <Script
+          id="stamped-init"
+          strategy="afterInteractive" // Loads the script after the page is interactive
+          dangerouslySetInnerHTML={{
+            __html: `StampedFn.init({apiKey: 'pubkey-K91s63A6qQZ4uyHis7u8EvgUY2T3EP', sId: '105823'});`,
+          }}
+        />
       </body>
+
     </html>
   );
 }

@@ -17,7 +17,6 @@ import { LocaleType } from '~/i18n';
 import { cn } from '~/lib/utils';
 import { BcImage } from '~/components/bc-image';
 
-// import Slider from './custom-template/SlickSlider'
 //! DYNAMICALLY IMPORT
 const Slider = dynamic(() => import('./custom-template/SlickSlider'), {
   ssr: false,
@@ -26,6 +25,7 @@ const Slider = dynamic(() => import('./custom-template/SlickSlider'), {
 //! import arr
 import { heroBanner } from './ArrData/HeroBanner'
 import { hpcontent } from './ArrData/HomepageArr'
+import { FaqArr } from './ArrData/Faq'
 
 interface Props {
   params: {
@@ -363,6 +363,60 @@ export default async function Home({ params: { locale } }: Props) {
         <div className='bg-white w-[65%] flex flex-row items-center justify-start'>
           <img className='h-[22.5rem] w-auto object-contain' src={hpcontent['bed-img']} />
         </div>
+      </div>
+
+      <div className='pl-[8vw] pr-[8vw] mt-[75px]'>
+        <h2 className='text-[#132448] font-[900] inline text-[25px]'>Have questions?</h2>
+        <p className='text-[#132448] font-[699] inline text-[20px] ml-[1rem]'>Here are some frequently asked questions.</p>
+        <div className='flex flex-wrap justify-between w-[90%] m-auto pt-[5px]'>
+          {FaqArr && FaqArr.map(item => {
+            return (
+              <div className='w-[48%] mt-[25px]' key={item.id}>
+                <div className='flex items-center'>
+                  <img src='https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/question-mark-icon.png?t=1647925466&_gl=1*8pzu4b*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzkyNTA4Mi41MS4xLjE2NDc5MjU0NTUuNTU.' />
+                  <h2 className='ml-[1rem] text-[#132448] font-[600] mt-[0px] text-[20px]'>
+                    {item.title}
+                  </h2>
+                </div>
+                <p className='border-l-[#264da3] border-t-[#fff] border-b-[#fff] border-r-[#fff] border-[1px] pl-[2rem] ml-[1rem] mt-[16px] mb-[16px]'>
+                  {item.text}
+                  <br />
+                  <br />
+                  <a className='text-[#264da3] font-[700]' href='#'>
+                    Read More
+                  </a>
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      <div className='bg-[#11298a]'>
+        <div className='w-[75%] mx-auto py-5'>
+          <h2 className='text-center font-[700] text-inherit mt-[0px] tracking-[.25px] mb-[.78571rem] text-[25px] !text-white'>
+            Get In Touch
+          </h2>
+          <p className='text-white text-center text-[18px] mb-[1.5em]'>
+            We keep our lines open to customers who need assistance.
+            <br />
+            Feel free to reach us by using this inquiry form or by visiting our Support Center.
+          </p>
+          <button className='h-auto w-auto bg-white'>
+            <span className='py-[14px] px-[25px] inline-block text-center'>
+              Get In Touch
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div id="stamped-main-widget"
+        data-product-id="##product.id##"
+        data-name="##product.title##"
+        data-url="##product.url##"
+        data-image-url="##product.image##"
+        data-description="##product.description##"
+        data-product-sku="##product.handle##">
       </div>
 
     </>
