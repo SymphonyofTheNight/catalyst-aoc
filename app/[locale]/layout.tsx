@@ -86,13 +86,12 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js"></script>
         <script type="text/javascript" src="https://cdn1.stamped.io/files/widget.min.js"></script>
         <Script
           id="stamped-init"
           strategy="afterInteractive" // Loads the script after the page is interactive
           dangerouslySetInnerHTML={{
-            __html: `StampedFn.init({apiKey: 'pubkey-K91s63A6qQZ4uyHis7u8EvgUY2T3EP', sId: '105823'});`,
+            __html: `StampedFn.init({apiKey: '${process.env.STAMPED_API_KEY}', sId: '${process.env.STAMPED_HASH}'});`,
           }}
         />
       </body>

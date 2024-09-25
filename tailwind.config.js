@@ -57,11 +57,26 @@ const config = {
         "kid-sleep": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/usa.png?t=1647849295&_gl=1*mkoz7y*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4NDkyODIuNTk.')",
         "affirm": "https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/affirm-bg.webp",
         "parallax-2": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/is-parallax-pattern-bg.png?t=1647995595&_gl=1*qnpn72*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0Nzk5NTUyMi41NC4xLjE2NDc5OTU2MDAuNTg')",
+        "bed-sleep": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/bed-top-view.webp')",
+        "certified-prod": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/certified-bg.webp')",
+        "sofa-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/forever-warranty-bg.webp')",
+        "stack-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/feature-rich-%20mattress.webp')"
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
       }
     },
+    screens: {
+      'xxs': '260px',
+      'xs': '400px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '1xl': '1360px',
+      '2xl': '1440px',
+      '3xl': '1540px',
+    }
   },
 
   plugins: [

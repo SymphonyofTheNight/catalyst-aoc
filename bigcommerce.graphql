@@ -3973,6 +3973,16 @@ type Customer {
     first: Int
     last: Int
   ): MetafieldConnection!
+
+  """The Orders for the customer."""
+  orders(
+    """The filters for the customers orders."""
+    filters: OrdersFiltersInput
+    before: String
+    after: String
+    first: Int
+    last: Int
+  ): OrdersConnection
 }
 
 """Address that is associated with a customer account."""
@@ -7354,16 +7364,6 @@ type Site {
     """Brand ID."""
     entityId: Int!
   ): Brand
-
-  """List of orders."""
-  orders(
-    """Available search filters for use when querying orders."""
-    filters: OrdersFiltersInput
-    before: String
-    after: String
-    first: Int
-    last: Int
-  ): OrdersConnection
 
   """A single order."""
   order(
