@@ -330,7 +330,7 @@ export default async function Home({ params: { locale } }: Props) {
 
         <div className='h-auto w-full mt-[15px] flex flex-row sm:flex-nowrap xxs:flex-wrap mb-[25px]'>
           <div className='bg-sofa-img bg-no-repeat bg-center bg-cover xl:h-[500px] xxs:h-[350px] sm:w-[50vw] xxs:w-[100vw] xl:mr-[0px] sm:mr-[5px] relative'>
-            <div className='absolute left-0 xl:top-[40%] sm:top-[20%] xxs:top-[25%] h-auto w-[100%] lg:pl-[50px] xxs:pl-[25px]'>
+            <div className='absolute left-0 xl:top-[35%] sm:top-[20%] xxs:top-[25%] h-auto w-[100%] lg:pl-[50px] xxs:pl-[25px]'>
               <div>
                 <img className='h-auto 3xl:w-[auto] xl:w-[80px] xxs:w-[70px] object-contain' src={hpcontent['loop-img']} />
               </div>
@@ -345,7 +345,7 @@ export default async function Home({ params: { locale } }: Props) {
             </div>
           </div>
           <div className='bg-stack-img bg-no-repeat bg-center bg-cover xl:h-[500px] xxs:h-[350px] sm:w-[50vw] xxs:w-[100vw] pl-[35px] xl:ml-[0px] sm:ml-[5px] relative'>
-            <div className='absolute left-0 xl:top-[40%] xxs:top-[25%] h-auto w-[100%] xl:pl-[50px] lg:pl-[50px] xxs:pl-[25px]'>
+            <div className='absolute left-0 xl:top-[35%] xxs:top-[25%] h-auto w-[100%] xl:pl-[50px] lg:pl-[50px] xxs:pl-[25px]'>
               <div>
                 <img className='h-auto 3xl:w-[auto] xl:w-[80px] xxs:w-[70px] object-contain' src={hpcontent['stack-img']} />
               </div>
