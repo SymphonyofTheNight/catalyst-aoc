@@ -298,7 +298,7 @@ export default async function Home({ params: { locale } }: Props) {
 
         <div className='h-auto w-full mt-[35px] flex flex-row sm:flex-nowrap xxs:flex-wrap mb-[25px]'>
           <div className='bg-bed-sleep bg-no-repeat bg-center bg-cover xl:h-[500px] xl:w-[70vw] xxs:h-[350px] sm:w-[50vw] xxs:w-[100vw] pr-[35px] xl:mr-[0px] sm:mr-[5px] relative'>
-            <div className='absolute left-0 xl:top-[40%] md:top-[17%] sm:!top-[12%] xxs:!top-[18%] h-auto w-[100%] 3xl:pl-[50px] 2xl:pl-[40px] xl:pl-[40px] xxs:pl-[25px]'>
+            <div className='absolute left-0 xl:!top-[40%] md:!top-[17%] sm:!top-[12%] xxs:!top-[18%] h-auto w-[100%] 3xl:pl-[50px] 2xl:pl-[40px] xl:pl-[40px] xxs:pl-[25px]'>
               <div>
                 <img className='h-auto 3xl:w-[auto] xl:w-[80px] xxs:w-[70px] object-contain' src={hpcontent['calendar-img']} />
               </div>
