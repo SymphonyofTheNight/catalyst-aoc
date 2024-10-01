@@ -51,16 +51,16 @@ const Footer = ({
   socialMediaLinks,
   ...props
 }: Props) => (
-  <footer className={cn('2xl:container 2xl:mx-auto', className)} {...props}>
-    <section className="flex flex-col gap-8 border-t border-gray-200 px-4 py-10 sm:px-10 md:flex-row lg:gap-4 lg:px-12 2xl:px-0">
+  <footer className={cn('2xl:container 2xl:mx-auto', className, 'px-[6vw] bg-bg-parallax-footer bg-fixed bg-center bg-no-repeat bg-cover !m-0 w-full !max-w-[100%]')} {...props}>
+    <section className={cn('flex flex-col gap-8 border-t border-gray-200 px-4 py-10 sm:px-10 md:flex-row lg:gap-4 lg:px-12 2xl:px-0', 'border-none')}>
       <nav className="grid flex-auto auto-cols-fr gap-8 sm:grid-flow-col">
         {sections.map((section) => (
           <div key={section.title}>
-            <h3 className="mb-4 text-lg font-bold">{section.title}</h3>
+            <h3 className="text-white mb-4 text-lg font-bold">{section.title}</h3>
             <ul className="flex flex-col gap-4">
               {section.links.map((link) => (
                 <li key={link.href}>
-                  <CustomLink href={link.href}>{link.label}</CustomLink>
+                  <CustomLink className='text-white' href={link.href}>{link.label}</CustomLink>
                 </li>
               ))}
             </ul>
@@ -86,7 +86,7 @@ const Footer = ({
         )}
         {Boolean(contactInformation) && (
           <>
-            <address className="not-italic">
+            <address className="text-white not-italic">
               {contactInformation?.address?.split('\n').map((line) => (
                 <Fragment key={line}>
                   {line}
@@ -99,7 +99,7 @@ const Footer = ({
                 className="hover:text-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
                 href={`tel:${contactInformation?.phone}`}
               >
-                <p>{contactInformation?.phone}</p>
+                <p className='text-white'>{contactInformation?.phone}</p>
               </a>
             )}
           </>
@@ -109,7 +109,7 @@ const Footer = ({
             <ul className="flex gap-6">
               {socialMediaLinks?.map((link) => (
                 <li key={link.href}>
-                  <CustomLink className="inline-block" href={link.href} target="_blank">
+                  <CustomLink className="text-white inline-block" href={link.href} target="_blank">
                     {link.icon}
                   </CustomLink>
                 </li>
@@ -119,20 +119,20 @@ const Footer = ({
         )}
       </div>
     </section>
-    <section className="flex flex-col gap-10 border-t border-gray-200 px-4 py-8 sm:gap-8 sm:px-10 sm:py-6 lg:hidden lg:px-12 2xl:px-0">
+    <section className={cn('flex flex-col gap-10 border-t border-gray-200 px-4 py-8 sm:gap-8 sm:px-10 sm:py-6 lg:hidden lg:px-12 2xl:px-0', 'border-none')}>
       <Locale />
 
       <div className="flex w-full flex-col justify-between gap-10 sm:flex-row sm:gap-8">
-        <div className="flex gap-6">{paymentIcons}</div>
-        <p className="text-gray-500 sm:order-first">{copyright}</p>
+        <div className="text-white flex gap-6">{paymentIcons}</div>
+        <p className="text-white sm:order-first">{copyright}</p>
       </div>
     </section>
 
-    <section className="hidden justify-between gap-8 border-t border-gray-200 px-4 py-6 sm:px-10 lg:flex lg:px-12 2xl:px-0">
-      <p className="text-gray-500 sm:order-first">{copyright}</p>
+    <section className={cn('hidden justify-between gap-8 border-t border-gray-200 px-4 py-6 sm:px-10 lg:flex lg:px-12 2xl:px-0', 'border-none')}>
+      <p className={cn('text-gray-500 sm:order-first', 'text-white')}>{copyright}</p>
       <div className="flex gap-8">
         <Locale />
-        <div className="flex gap-6">{paymentIcons}</div>
+        <div className="flex gap-6 text-white">{paymentIcons}</div>
       </div>
     </section>
   </footer>

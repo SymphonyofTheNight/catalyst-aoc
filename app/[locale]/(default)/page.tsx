@@ -92,7 +92,7 @@ export default async function Home({ params: { locale } }: Props) {
       <div className='w-auto xl:h-[45vw] xxs:h-[43vw] bg-hero-bg lg:bg-contain xxs:bg-cover flex items-center justify-start bg-no-repeat'>
         <div className='h-auto w-auto 3xl:ml-[5vw] 2xl:ml-[5vw] xl:ml-[5vw] md:ml-[5vw] 2xl:mb-5 flex flex-col justify-start items-start lg:block xxs:hidden'>
           <div className='flex flex-row sm:flex-nowrap xxs:flex-wrap items-center'>
-            <img className='h-auto xxs:w-[25%]' src={heroBanner['img-stars']} />
+            <img className='h-auto xxs:w-[18%]' src={heroBanner['img-stars']} />
             <span className='text-white 3xl:text-[14px] 2xl:text-[14px] xl:text-[12px] md:text-[12px]'>
               (749)
             </span>

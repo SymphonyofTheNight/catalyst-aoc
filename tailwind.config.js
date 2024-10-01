@@ -60,7 +60,8 @@ const config = {
         "bed-sleep": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/bed-top-view.webp')",
         "certified-prod": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/certified-bg.webp')",
         "sofa-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/forever-warranty-bg.webp')",
-        "stack-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/feature-rich-%20mattress.webp')"
+        "stack-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/feature-rich-%20mattress.webp')",
+        "bg-parallax-footer": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/images/stencil/original/image-manager/is-parallax-pattern-opt.png?t=1677658441&_gl=1*foioyg*_ga*MTg3MDAxNzI4MC4xNjU4ODE4Mzk1*_ga_WS2VZYPC6G*MTY3NzY1Njg1MS40MTMuMS4xNjc3NjU4NDQyLjQ3LjAuMA')"
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
