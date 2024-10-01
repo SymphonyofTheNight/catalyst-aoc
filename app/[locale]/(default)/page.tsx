@@ -229,7 +229,7 @@ export default async function Home({ params: { locale } }: Props) {
       </div> */}
 
       <div className='w-full h-[auto] flex flex-row flex-wrap xl:mt-[0px] xxs:mt-[30px]'>
-        <div className='w-full h-auto md:px-[3vw]'>
+        <div className='w-full h-auto md:px-[7vw]'>
           <h2 className='text-clr font-[900] pl-[25px] 3xl:text-[28px] 2xl:text-[28px] xl:text-[25px] sm:text-[25px] xxs:text-[20px]'>Shop Our Best Sellers</h2>
         </div>
         <div className='w-full h-[auto] xl:pl-[7vw] xl:pr-[7vw] md:pl-[3.3vw] md:pr-[3.3vw] flex flex-row sm:flex-nowrap xxs:flex-wrap items-start justify-between mt-[30px] mb-[30px]'>

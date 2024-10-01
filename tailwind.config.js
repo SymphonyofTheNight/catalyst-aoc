@@ -64,7 +64,10 @@ const config = {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
-      }
+      },
+      boxShadow: {
+        'bottom': '1px 2px 4px 0 rgba(0, 0, 0, 0.65)',
+      },
     },
     screens: {
       'xxs': '260px',
@@ -72,10 +75,13 @@ const config = {
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
+      'lgshow': '1100px',
       'xl': '1280px',
       '1xl': '1360px',
       '2xl': '1440px',
       '3xl': '1540px',
+      '4xl': '1680px',
+      '5xl': '1800px',
     }
   },
 

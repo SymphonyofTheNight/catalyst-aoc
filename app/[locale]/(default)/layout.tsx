@@ -56,7 +56,7 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
     <>
       <Header cart={<Cart />} data={data.site} />
 
-      <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0 xxs:!px-0", 'lg:max-w-none w-full lg:p-0', montserrat.className)}>
+      <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0 xxs:!px-0", 'lg:max-w-none w-full lg:p-0 lg:mt-[135px]', montserrat.className)}>
         {/* <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0")}> */}
         {children}
       </main>
