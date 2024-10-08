@@ -77,8 +77,8 @@ export default async function Category({ params: { locale, slug }, searchParams 
     <div>
       {/* custom banner */}
       {category.name && category.name === 'Adjustable Frames' ? (
-        <div className='h-[450px] w-full bg-adjustable-frame bg-cover bg-center flex items-center justify-center'>
-          <h1 className='text-white capitalize font-[700] text-[36px] font-montserrat tracking-[5px]'>{category.name}</h1>
+        <div className='lg:!h-[450px] md:!h-[300px] xxs:!h-[250px] lg:!mt-[0px] md:!mt-[130px] xxs:!mt-[90px] w-full bg-adjustable-frame bg-cover bg-center flex items-center justify-center'>
+          <h1 className='text-white capitalize font-[700] md:text-[36px] xxs:text-[30px] font-montserrat tracking-[5px]'>{category.name}</h1>
         </div>
       ) : null}
       <div className={cn('group', 'px-[3vw] py-[3vh] bg-[#f3f3f3]')}>
@@ -133,7 +133,7 @@ export default async function Category({ params: { locale, slug }, searchParams 
                 {t('products')}
               </h2>
 
-              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8">
+              <div className={cn('grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8', 'xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xxs:mt-[20px] md:mt-[0px]')}>
                 {products.map((product, index) => (
                   <ProductCard
                     imagePriority={index <= 3}
@@ -161,8 +161,8 @@ export default async function Category({ params: { locale, slug }, searchParams 
                   <div className={`sm:h-[385px] xxs:h-[300px] lg:w-[32%] md:w-[48%] xxs:w-[100%] ${val.bgString} bg-cover bg-center bg-no-repeat relative lg:my-[0px] xxs:my-[10px]`} key={val.id}>
                     <span className='absolute top-[6%] left-[7%] text-white bg-[#264da3] px-[1rem] rounded-[12px] text-[14px]'>Starts at {val.price}</span>
                     <div className='h-[50px] flex justify-between items-center w-[88%] absolute bottom-[5%] left-[7%] mx-auto'>
-                      <a className='text-white font-[600] text-[18px]' href='' target='_blank'>{val.name}</a>
-                      <a className='bg-[#132448] text-white py-[.5em] px-[3.5em] inline-block rounded-[10px] tracking-[1px]' href='' target=''>Shop</a>
+                      <a className='text-white font-[600] text-[18px]' href={val.link} target='_blank'>{val.name}</a>
+                      <a className='bg-[#132448] text-white py-[.5em] px-[3.5em] inline-block rounded-[10px] tracking-[1px]' href={val.link} target=''>Shop</a>
                     </div>
                   </div>
                 ))}

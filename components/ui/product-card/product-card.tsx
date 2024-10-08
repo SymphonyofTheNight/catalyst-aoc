@@ -56,7 +56,7 @@ const ProductCard = ({
   name,
   ...props
 }: Props) => (
-  <div className={cn('group relative flex flex-col overflow-visible', className, 'bg-[#ffffff] py-[2vh] px-[1vw]')} {...props}>
+  <div className={cn('group relative flex flex-col overflow-visible', className, 'bg-[#ffffff] py-[2vh] md:px-[1vw] xxs:px-[4vw]')} {...props}>
     <div className={cn('relative flex justify-center pb-3', 'flex-col')}>
       {subtitle ? <p className={cn('text-base text-gray-500', 'text-center uppercase')}>{subtitle}</p> : null}
       <h3 className={cn('text-xl font-bold lg:text-2xl', 'text-center lg:text-[18px]')}>

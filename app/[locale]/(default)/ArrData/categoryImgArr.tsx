@@ -18,7 +18,7 @@ export const categoryImgArr: CategoryImgArr[] = [
         bgString: "bg-Blankets",
         price: "$29.99",
         name: "Blankets",
-        link: getNavData ? getNavData[0]?.path : undefined,  // Get path from getNavData
+        link: getNavData ? getNavData[2]?.path : undefined,  // Get path from getNavData
     },
     {
         id: 2,
@@ -32,7 +32,7 @@ export const categoryImgArr: CategoryImgArr[] = [
         bgString: "bg-Sheets",
         price: "$79.99",
         name: "Sheets",
-        link: getNavData ? getNavData[2]?.path : undefined,
+        link: getNavData ? getNavData[0]?.path : undefined,
     }
 ];
 
