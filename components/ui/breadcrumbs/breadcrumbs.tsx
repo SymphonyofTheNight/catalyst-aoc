@@ -14,9 +14,11 @@ interface Props {
   className?: string;
 }
 
+//! take note the breadcrumb was set to hidden
+
 const Breadcrumbs = ({ breadcrumbs, className }: Props) => {
   return (
-    <nav aria-label="Breadcrumb" className={className}>
+    <nav aria-label="Breadcrumb" className={cn('hidden', className)}>
       <ul className="flex flex-wrap items-center py-4">
         {breadcrumbs.map(({ label, href }, i, arr) => {
           const isLast = arr.length - 1 === i;

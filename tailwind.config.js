@@ -61,7 +61,12 @@ const config = {
         "certified-prod": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/certified-bg.webp')",
         "sofa-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/forever-warranty-bg.webp')",
         "stack-img": "url('https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/feature-rich-%20mattress.webp')",
-        "bg-parallax-footer": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/images/stencil/original/image-manager/is-parallax-pattern-opt.png?t=1677658441&_gl=1*foioyg*_ga*MTg3MDAxNzI4MC4xNjU4ODE4Mzk1*_ga_WS2VZYPC6G*MTY3NzY1Njg1MS40MTMuMS4xNjc3NjU4NDQyLjQ3LjAuMA')"
+        "bg-parallax-footer": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/images/stencil/original/image-manager/is-parallax-pattern-opt.png?t=1677658441&_gl=1*foioyg*_ga*MTg3MDAxNzI4MC4xNjU4ODE4Mzk1*_ga_WS2VZYPC6G*MTY3NzY1Njg1MS40MTMuMS4xNjc3NjU4NDQyLjQ3LjAuMA')",
+        "adjustable-frame": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/adjustable-frames-sub-banner.png')",
+        "category-parallax": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/adjustable-frames-parallax.png')",
+        "Blankets": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-blankets.png')",
+        "Mattress": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-mattress-protector.png')",
+        "Sheets": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-sheets.png')"
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
@@ -88,7 +93,6 @@ const config = {
 
   plugins: [
     // @ts-ignore
-
     require('tailwindcss-radix')(),
     require('tailwindcss-animate'),
     require('@tailwindcss/container-queries'),

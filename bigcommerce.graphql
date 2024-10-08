@@ -1,3 +1,6 @@
+"""Directive that allows overriding shopper preferences."""
+directive @shopperPreferences(locale: String) on QUERY
+
 """An error due to customer registration being disabled on a storefront."""
 type AccountCreationDisabledError implements Error {
   """A description of the error."""
@@ -4303,6 +4306,12 @@ type FormFields {
   ): [FormField!]!
 }
 
+"""Google Analytics 4 provider."""
+type GA4Provider {
+  """Google Analytics 4 tag ID."""
+  tagId: String!
+}
+
 """Geography information."""
 type Geography {
   """A list of available countries."""
@@ -4676,6 +4685,12 @@ type Measurement {
 
   """Unit of measurement."""
   unit: String!
+}
+
+"""Facebook Pixel analytics provider."""
+type MetaPixelProvider {
+  """Identification number of Pixel."""
+  pixelId: String!
 }
 
 """A connection to a list of items."""
@@ -6706,6 +6721,9 @@ type Query {
 
   """Geography information."""
   geography: Geography!
+
+  """Shopper preferences."""
+  shopperPreferences: ShopperPreferences!
 }
 
 """Radio buttons form field."""
@@ -7089,6 +7107,12 @@ type SearchQueries {
   ): SearchProducts!
 }
 
+"""Segment.com analytics provider."""
+type SegmentProvider {
+  """Segment.com source identifier."""
+  writeKey: String!
+}
+
 """Seo Details"""
 type SeoDetails {
   """Page title."""
@@ -7172,6 +7196,12 @@ type Settings {
 
   """Store favicon url."""
   faviconUrl: String
+
+  """The robots.txt file content for the store."""
+  robotsTxt: String
+
+  """Analytics settings."""
+  webAnalytics: WebAnalytics
 }
 
 """A connection to a list of items."""
@@ -7196,6 +7226,18 @@ type ShopByPriceEdge {
 type ShopByPriceRange {
   """Category shop by price range."""
   ranges: MoneyRange!
+}
+
+"""Shopper locale."""
+type ShopperLocale {
+  """Resolved shopper locale."""
+  resolved: String
+}
+
+"""Shopper preferences."""
+type ShopperPreferences {
+  """Shopper locale."""
+  locale: ShopperLocale
 }
 
 """A site"""
@@ -7787,6 +7829,18 @@ type VideoEdge {
 
   """A cursor for use in pagination."""
   cursor: String!
+}
+
+"""Analytics settings."""
+type WebAnalytics {
+  """Google Analytics 4 provider data."""
+  ga4: GA4Provider
+
+  """Segment.com analytics provider data."""
+  segment: SegmentProvider
+
+  """Facebook Pixel analytics provider data."""
+  metaPixel: MetaPixelProvider
 }
 
 """WebPage details."""

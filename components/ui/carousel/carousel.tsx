@@ -105,7 +105,7 @@ const Carousel = ({ className, title, pageSize = 4, products, ...props }: Props)
       role="region"
       {...props}
     >
-      <div className={cn("flex items-center justify-between")}>
+      <div className={cn("flex items-center justify-between", 'px-[3vw]')}>
 
         <h2 className="text-3xl font-black lg:text-4xl" id={titleId}>
           {title}
@@ -141,7 +141,7 @@ const Carousel = ({ className, title, pageSize = 4, products, ...props }: Props)
 
       </div>
 
-      <div className={cn("-mx-2 overflow-hidden px-2")} ref={carouselRef}>
+      <div className={cn("-mx-2 overflow-hidden px-2", 'px-[3vw]')} ref={carouselRef}>
         <div className="-mx-4 mb-16 mt-8 flex lg:mt-10">
           {groupedProducts.map((group, index) => (
             <div

@@ -56,8 +56,18 @@ const ProductCard = ({
   name,
   ...props
 }: Props) => (
-  <div className={cn('group relative flex flex-col overflow-visible', className)} {...props}>
-    <div className="relative flex justify-center pb-3">
+  <div className={cn('group relative flex flex-col overflow-visible', className, 'bg-[#ffffff] py-[2vh] px-[1vw]')} {...props}>
+    <div className={cn('relative flex justify-center pb-3', 'flex-col')}>
+      {subtitle ? <p className={cn('text-base text-gray-500', 'text-center uppercase')}>{subtitle}</p> : null}
+      <h3 className={cn('text-xl font-bold lg:text-2xl', 'text-center lg:text-[18px]')}>
+        <Link
+          className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary/20 focus-visible:ring-0"
+          href={href}
+        >
+          <span aria-hidden="true" className="absolute inset-0 bottom-20" />
+          {name}
+        </Link>
+      </h3>
       <div className={cn('relative flex-auto', { 'aspect-square': imageSize === 'square', 'aspect-[4/5]': imageSize === 'tall', 'aspect-[7/5]': imageSize === 'wide', })}>
         {image ? (
           <BcImage
@@ -74,7 +84,7 @@ const ProductCard = ({
       </div>
     </div>
     <div className={cn('flex flex-1 flex-col gap-1', Boolean(addToCart) && 'justify-end')}>
-      {subtitle ? <p className="text-base text-gray-500">{subtitle}</p> : null}
+      {/* {subtitle ? <p className="text-base text-gray-500">{subtitle}</p> : null}
       <h3 className="text-xl font-bold lg:text-2xl">
         <Link
           className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary/20 focus-visible:ring-0"
@@ -83,8 +93,8 @@ const ProductCard = ({
           <span aria-hidden="true" className="absolute inset-0 bottom-20" />
           {name}
         </Link>
-      </h3>
-      <div className="flex flex-wrap items-end justify-between pt-1">
+      </h3> */}
+      <div className={cn('flex flex-wrap items-end justify-between pt-1', 'justify-center')}>
         {Boolean(price) &&
           (typeof price === 'object' ? (
             <p className="flex flex-col gap-1">
@@ -104,10 +114,10 @@ const ProductCard = ({
               )}
             </p>
           ) : (
-            <span>{price}</span>
+            <span className='text-clr text-[19px] font-[600]'>{price}</span>
           ))}
 
-        {showCompare && <Compare id={id} image={image} name={name} />}
+        {/* {showCompare && <Compare id={id} image={image} name={name} />} */}
       </div>
     </div>
     {addToCart}

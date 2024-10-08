@@ -33,6 +33,14 @@ import { cn } from '~/lib/utils';
 import { Montserrat } from 'next/font/google'
 import { cookies } from 'next/headers';
 
+// ! need to export this to another file
+const getNavRoutes = await client.fetch({
+  document: LayoutQuery,
+  fetchOptions: { next: { revalidate } },
+});
+
+export const getNavData = getNavRoutes.data.site.categoryTree[1]?.children;
+
 //! setting font to use
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -49,8 +57,6 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
   const messages = await getMessages({ locale });
 
   const cartId = cookies().get('cartId')?.value;
-
-  console.log(cartId);
 
   return (
     <>

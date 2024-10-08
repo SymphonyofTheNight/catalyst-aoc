@@ -17,6 +17,9 @@ import { Reviews } from './_components/reviews';
 import { Warranty } from './_components/warranty';
 import { getProduct } from './page-data';
 
+//! custom import 
+import { cn } from '~/lib/utils';
+
 interface ProductPageProps {
   params: { slug: string; locale: LocaleType };
   searchParams: Record<string, string | string[] | undefined>;
@@ -48,13 +51,13 @@ export async function generateMetadata({
     keywords: metaKeywords ? metaKeywords.split(',') : null,
     openGraph: url
       ? {
-          images: [
-            {
-              url,
-              alt,
-            },
-          ],
-        }
+        images: [
+          {
+            url,
+            alt,
+          },
+        ],
+      }
       : null,
   };
 }
@@ -87,7 +90,7 @@ export default async function Product({ params, searchParams }: ProductPageProps
     <>
       {category && <Breadcrumbs category={category} />}
 
-      <div className="mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8">
+      <div className={cn('mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8', 'px-[3vw]')}>
         <NextIntlClientProvider
           locale={locale}
           messages={{ Product: messages.Product ?? {}, AddToCart: messages.AddToCart ?? {} }}

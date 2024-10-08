@@ -62,8 +62,6 @@ export const Submit = ({ data: product }: Props) => {
 
 export const ProductForm = ({ data: product }: Props) => {
 
-  console.log(product);
-
   const t = useTranslations('Product.Form');
   const m = useTranslations('AddToCart');
   const productOptions = removeEdgesAndNodes(product.productOptions);
