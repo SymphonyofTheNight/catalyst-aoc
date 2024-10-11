@@ -27,8 +27,8 @@ const Select = forwardRef<ElementRef<typeof SelectPrimitive.Trigger>, Props>(
           aria-label={label}
           className={cn(
             'group flex h-12 w-full items-center justify-between border-2 border-gray-200 px-4 py-3 text-base text-black hover:border-primary focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:bg-gray-100 disabled:hover:border-gray-200 data-[placeholder]:text-gray-500',
-            error &&
-              'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error-secondary/20 disabled:border-gray-200',
+            'rounded-[5px] bg-[#e2e8ed] border-[#e2e8ed] text-[#18253f] text-[16px] font-[600]', error &&
+          'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error-secondary/20 disabled:border-gray-200',
           )}
           id={triggerId}
           ref={ref}

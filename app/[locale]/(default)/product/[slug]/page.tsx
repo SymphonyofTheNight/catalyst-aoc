@@ -80,6 +80,8 @@ export default async function Product({ params, searchParams }: ProductPageProps
     useDefaultOptionSelections: optionValueIds.length === 0 ? true : undefined,
   });
 
+  console.log("Get product:", product)
+
   if (!product) {
     return notFound();
   }
@@ -90,21 +92,22 @@ export default async function Product({ params, searchParams }: ProductPageProps
     <>
       {category && <Breadcrumbs category={category} />}
 
-      <div className={cn('mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8', 'px-[3vw]')}>
+      <div className={cn('mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8', 'px-[3vw] lg:flex lg:flex-row')}>
         <NextIntlClientProvider
           locale={locale}
           messages={{ Product: messages.Product ?? {}, AddToCart: messages.AddToCart ?? {} }}
         >
           <Gallery noImageText={t('noGalleryText')} product={product} />
           <Details product={product} />
-          <div className="lg:col-span-2">
-            <Description product={product} />
-            <Warranty product={product} />
-            <Suspense fallback={t('loading')}>
-              <Reviews productId={product.entityId} />
-            </Suspense>
-          </div>
         </NextIntlClientProvider>
+      </div>
+
+      <div className={cn('lg:col-span-2', 'px-[3vw]')}>
+        <Description product={product} />
+        <Warranty product={product} />
+        <Suspense fallback={t('loading')}>
+          <Reviews productId={product.entityId} />
+        </Suspense>
       </div>
 
       <Suspense fallback={t('loading')}>

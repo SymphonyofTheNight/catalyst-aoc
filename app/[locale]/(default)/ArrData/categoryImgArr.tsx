@@ -35,5 +35,3 @@ export const categoryImgArr: CategoryImgArr[] = [
         link: getNavData ? getNavData[0]?.path : undefined,
     }
 ];
-
-console.log(categoryImgArr);

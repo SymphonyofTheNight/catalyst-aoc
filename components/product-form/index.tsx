@@ -24,6 +24,9 @@ import { QuantityField } from './fields/quantity-field';
 import { TextField } from './fields/text-field';
 import { ProductFormData, useProductForm } from './use-product-form';
 
+// ! custom import 
+import moment from 'moment';
+
 interface Props {
   data: FragmentOf<typeof ProductItemFragment>;
 }
@@ -59,6 +62,12 @@ export const Submit = ({ data: product }: Props) => {
     </AddToCartButton>
   );
 };
+
+// Create a date object
+let date = moment(); // or moment('2024-10-11') to use a specific date
+
+// Format the date
+let formattedDate = date.format('MM/DD/YYYY');
 
 export const ProductForm = ({ data: product }: Props) => {
 
@@ -120,9 +129,11 @@ export const ProductForm = ({ data: product }: Props) => {
     );
   };
 
+  const { description } = product?.availabilityV2 || {};
+
   return (
     <FormProvider handleSubmit={handleSubmit} register={register} {...methods}>
-      <form className="flex flex-col gap-6 @container" onSubmit={handleSubmit(productFormSubmit)}>
+      <form className="flex flex-col gap-[.5rem] @container" onSubmit={handleSubmit(productFormSubmit)}>
         <input type="hidden" value={product.entityId} {...register('product_id')} />
 
         {productOptions.map((option) => {
@@ -154,6 +165,15 @@ export const ProductForm = ({ data: product }: Props) => {
         })}
 
         <QuantityField />
+
+        {/* custom container */}
+        <div className='w-[100%] flex bg-[#18253f] rounded-[5px] mt-[1.2rem] justify-evenly'>
+          <span className='text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Ships by:<span className='font-montserrat text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{formattedDate ? formattedDate : null}</span></span>
+          <div className='border-l-[2px] border-[#264da3] h-[30px] my-auto'></div>
+          <span className='text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Delivery:<span className='font-montserrat text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{description ? description : null}</span></span>
+        </div>
+
+        <p className='flex text-[#707070] text-[14px] text-left font-[400]'>*To learn more about shipping, check out our&nbsp;<a className='text-[#264da3] font-[700] underline'>Shipment Transit Chart.</a></p>
 
         <div className="mt-4 flex flex-col gap-4 @md:flex-row">
           <Submit data={product} />

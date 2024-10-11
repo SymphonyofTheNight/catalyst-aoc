@@ -14,6 +14,8 @@ import { MobileNav } from './mobile-nav';
 //! dynamic import
 import dynamic from 'next/dynamic';
 
+import { SearchForm } from '~/components/search-form';
+
 const HeaderSlider = dynamic(() => import('../../../app/[locale]/(default)/custom-template/HeaderSlider'), { ssr: false })
 
 interface Link {
@@ -501,6 +503,9 @@ const Header = async ({
 
           <NavigationMenuPrimitive.Viewport className="absolute start-0 top-full z-50 w-full bg-white pb-12 pt-6 shadow-xl duration-200 animate-in slide-in-from-top-5" />
         </NavigationMenuPrimitive.Root>
+
+        {/* custom import */}
+        <SearchForm />
 
         <div className={cn('flex items-center gap-2 lg:gap-4', 'absolute right-0')}>
           {search}

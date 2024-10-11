@@ -30,19 +30,21 @@ const LayoutQuery = graphql(
 
 //! custom import 
 import { cn } from '~/lib/utils';
-import { Montserrat } from 'next/font/google'
+import { Montserrat, Raleway } from 'next/font/google'
 import { cookies } from 'next/headers';
 
-// ! need to export this to another file
+// ! copy of data fetch
 const getNavRoutes = await client.fetch({
   document: LayoutQuery,
   fetchOptions: { next: { revalidate } },
 });
 
+//! import dat
 export const getNavData = getNavRoutes.data.site.categoryTree[1]?.children;
 
 //! setting font to use
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
+const raleway = Raleway({ subsets: ['latin'], weight: ['400', '700'] });
 
 export default async function DefaultLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
@@ -62,7 +64,7 @@ export default async function DefaultLayout({ children, params: { locale } }: Pr
     <>
       <Header cart={<Cart />} data={data.site} />
 
-      <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0 xxs:!px-0", 'lg:max-w-none w-full lg:p-0 lg:mt-[135px]', montserrat.className)}>
+      <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0 xxs:!px-0", 'lg:max-w-none w-full lg:p-0 lg:mt-[135px]', montserrat.className, raleway.className)}>
         {/* <main className={cn("flex-1 px-4 2xl:container sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0")}> */}
         {children}
       </main>

@@ -21,12 +21,12 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
   const selectedImage = images.length > 0 ? images[selectedImageIndex] : undefined;
 
   return (
-    <div aria-live="polite" className={className}>
-      <figure className="relative aspect-square h-full max-h-[548px] w-full">
+    <div aria-live="polite" className={cn(className, 'relative')}>
+      <figure className={cn('relative aspect-square h-full max-h-[548px] w-full', 'max-h-[748px]')}>
         {selectedImage ? (
           <BcImage
             alt={selectedImage.altText}
-            className="h-full w-full object-contain"
+            className={cn('h-full w-full object-contain', 'h-[548px] object-cover')}
             fill
             priority={true}
             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -39,7 +39,7 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
         )}
         {images.length > 1 && (
           <div className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-5 sm:px-0">
-            <button
+            {/* <button
               aria-label="Previous product image"
               className="focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
               onClick={() =>
@@ -68,22 +68,21 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
               }
             >
               <ChevronRight />
-            </button>
+            </button> */}
           </div>
         )}
       </figure>
       <nav
         aria-label="Thumbnail navigation"
-        className="mt-3 flex w-full flex-wrap items-center gap-4 px-6 py-1 sm:px-1 md:mt-5 md:gap-6"
+        className={cn('mt-3 flex w-full flex-wrap items-center gap-4 px-6 py-1 sm:px-1 md:mt-5 md:gap-6', 'flex-col absolute top-[1.5%] left-[30px] w-auto')}
       >
         {images.map((image, index) => {
           const isActive = selectedImageIndex === index;
-
           return (
             <button
               aria-label="Enlarge product image"
               aria-pressed={isActive}
-              className="inline-block h-12 w-12 flex-shrink-0 flex-grow-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 md:h-24 md:w-24"
+              className={cn('inline-block h-12 w-12 flex-shrink-0 flex-grow-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 md:h-24 md:w-24', 'md:h-auto')}
               key={image.src}
               onClick={() => {
                 setSelectedImageIndex(index);
@@ -92,8 +91,8 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
               <BcImage
                 alt={image.altText}
                 className={cn(
-                  'flex h-full w-full cursor-pointer items-center justify-center border-2 object-contain hover:border-primary',
-                  isActive && 'border-primary',
+                  'flex h-[60px] w-full cursor-pointer items-center justify-center border-2 object-cover hover:border-primary',
+                  isActive && 'border-primary h-[60px] object-cover',
                 )}
                 height={94}
                 priority={true}

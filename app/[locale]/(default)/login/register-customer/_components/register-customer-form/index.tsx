@@ -247,6 +247,7 @@ export const RegisterCustomerForm = ({
             })}
         </div>
         <div className="grid grid-cols-1 gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-2">
+
           {addressFields.map((field) => {
             switch (field.__typename) {
               case 'TextFormField':

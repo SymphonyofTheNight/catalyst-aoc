@@ -9,6 +9,9 @@ import { ErrorMessage } from '../shared/error-message';
 
 import { MultipleChoiceFieldFragment } from './fragment';
 
+// !custom import 
+import { cn } from '~/lib/utils';
+
 interface Props {
   option: FragmentOf<typeof MultipleChoiceFieldFragment>;
 }
@@ -166,9 +169,10 @@ export const MultipleChoiceField = ({ option }: Props) => {
 
     case 'DropdownList':
       return (
-        <div key={option.entityId}>
+        <div className='mt-[20px]' key={option.entityId}>
           <Label className="mb-2 inline-block font-semibold" htmlFor={`label-${option.entityId}`}>
-            {option.displayName}
+            {/* {option.displayName} */}
+            <span className='text-[#687880] text-[14px] leading-[.5em] font-[600]'>Size:</span> <small className='font-[200] text-[#757575]'>(Required)</small>
           </Label>
           <Select
             error={Boolean(error)}
@@ -199,6 +203,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
       );
 
     case 'ProductPickList':
+
     case 'ProductPickListWithImages':
       return (
         <div key={option.entityId}>
@@ -218,9 +223,9 @@ export const MultipleChoiceField = ({ option }: Props) => {
                 label: value.label,
                 image: value.defaultImage
                   ? {
-                      url: value.defaultImage.url,
-                      altText: value.defaultImage.altText,
-                    }
+                    url: value.defaultImage.url,
+                    altText: value.defaultImage.altText,
+                  }
                   : undefined,
                 onMouseEnter: () => {
                   handleMouseEnter({

@@ -69,7 +69,8 @@ const config = {
         "Sheets": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-sheets.png')"
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif']
+        montserrat: ['Montserrat', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       boxShadow: {
         'bottom': '1px 2px 4px 0 rgba(0, 0, 0, 0.65)',
