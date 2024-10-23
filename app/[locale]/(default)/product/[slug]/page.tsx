@@ -124,7 +124,7 @@ export default async function Product({ params, searchParams }: ProductPageProps
           <div className='xxs:w-[90%] lg:w-[45%] mx-auto'>
             <img className='w-[100%]' src='https://store-z2qdisybty.mybigcommerce.com/content/converted%20webp/mattress-dream-new.webp' />
           </div>
-          <div className='xxs:w-[90%] lg:w-[45%] m-auto xxs:mt-[20px] lg:mt-[0px]'>
+          <div className='xxs:w-[90%] lg:w-[45%] m-auto xxs:mt-[20px] lg:my-auto'>
             <h2 className='text-[#f8f9fa] mb-4 font-[700] font-montserrat text-[25px] tracking-[1px]'>The Mattress of Your Dreams</h2>
             <p className='text-[#f8f9fa]'>Icon Sleep's COOLest has a gel-infused memory foam top that promotes a
               conducive sleep environment for all sleepers. This dream-inducing
