@@ -86,8 +86,6 @@ export default async function Home({ params: { locale } }: Props) {
 
   return (
     <>
-      {/* <Hero /> */}
-
       {/* custom elem hero banner */}
       <div className='w-auto xl:h-[45vw] xxs:h-[43vw] bg-hero-bg lg:bg-contain xxs:bg-cover flex items-center justify-start bg-no-repeat'>
         <div className='h-auto w-auto 3xl:ml-[5vw] 2xl:ml-[5vw] xl:ml-[5vw] md:ml-[5vw] 2xl:mb-5 flex flex-col justify-start items-start lg:block xxs:hidden'>
@@ -119,7 +117,7 @@ export default async function Home({ params: { locale } }: Props) {
             </div>
           </div>
           <div>
-            <button className='bg-[#db2929] h-auto xl:w-[25vw] md:w-[32vw] mt-[25px] xl:pt-[1.3vh] xl:pb-[1.3vh] md:pt-[.6vh] md:pb-[.6vh] rounded-[5px]'>
+            <button className='bg-[#db2929] h-auto xl:w-[25vw] md:w-[32vw] mt-[25px] xl:pt-[1.3vh] xl:pb-[1.3vh] md:pt-[.6vh] md:pb-[.6vh] rounded-[5px] cursor-pointer text-center'>
               <span className='uppercase text-white font-[500] 3xl:text-[14px] 2xl:text-[12px] xl:text-[11px] md:text-[11px]'>Shop Coolest Gel Mattress</span>
             </button>
           </div>
@@ -190,10 +188,11 @@ export default async function Home({ params: { locale } }: Props) {
           </div>
 
           <div>
-            <button className='bg-[#db2929] h-auto xl:w-[25vw] sm:w-[40vw] xxs:w-[70vw] mt-[25px] xl:py-[1.3vh] xxs:py-[.6vh] rounded-[5px]'>
-              <span className='uppercase text-white font-[500] 3xl:text-[14px] 2xl:text-[12px] xl:text-[11px] xxs:text-[11px]'>Shop Coolest Gel Mattress</span>
-            </button>
+            {/* <button className='bg-[#db2929] h-auto xl:w-[25vw] sm:w-[40vw] xxs:w-[70vw] mt-[25px] xl:py-[1.3vh] xxs:py-[.6vh] rounded-[5px] cursor-pointer'>
+              <span className='uppercase text-white font-[500] 3xl:text-[14px] 2xl:text-[12px] xl:text-[11px] xxs:text-[11px] text-center'>Shop Coolest Gel Mattress</span>
+            </button> */}
           </div>
+
           <div className='h-[100px] xl:w-[25vw] sm:w-[40vw] xxs:w-[80vw] mt-[10px] flex flex-row justify-between items-center'>
             <div className='h-auto w-auto flex flex-col items-center justify-center text-center pl-[10px]'>
               <img className='xl:h-[50px] xl:w-[40px] md:h-[auto] xxs:w-[27px] object-contain' src={heroBanner['img-moon']} />

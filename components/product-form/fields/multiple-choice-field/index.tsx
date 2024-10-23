@@ -169,7 +169,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
 
     case 'DropdownList':
       return (
-        <div className='mt-[20px]' key={option.entityId}>
+        <div className='size-parent-container mt-[20px]' key={option.entityId}>
           <Label className="mb-2 inline-block font-semibold" htmlFor={`label-${option.entityId}`}>
             {/* {option.displayName} */}
             <span className='text-[#687880] text-[14px] leading-[.5em] font-[600]'>Size:</span> <small className='font-[200] text-[#757575]'>(Required)</small>

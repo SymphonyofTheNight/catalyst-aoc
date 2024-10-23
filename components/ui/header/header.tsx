@@ -64,7 +64,7 @@ const Header = async ({
   const messages = await getMessages({ locale: activeLocale });
 
   return (
-    <div className={cn('bg-white fixed top-0 w-full z-50 shadow-bottom', className)}>
+    <div className={cn('bg-white sticky top-0 w-auto z-50 shadow-bottom', className)}>
       <HeaderSlider />
       <header className={cn('flex h-[92px] items-center justify-between gap-1 overflow-y-visible bg-white px-4 2xl:container sm:px-10 lg:gap-8 lg:px-12 2xl:mx-auto 2xl:px-0', 'justify-start relative 5xl:max-w-[1740px] 4xl:max-w-[1650px]')}>
         <CustomLink className={cn('overflow-hidden text-ellipsis py-3', 'lg:hidden lgshow:block')} href="/">
@@ -505,7 +505,7 @@ const Header = async ({
         </NavigationMenuPrimitive.Root>
 
         {/* custom import */}
-        <SearchForm />
+        {/* <SearchForm /> */}
 
         <div className={cn('flex items-center gap-2 lg:gap-4', 'absolute right-0')}>
           {search}

@@ -11,6 +11,8 @@ import { ReviewSummary, ReviewSummaryFragment } from './review-summary';
 
 //!custom import
 import { cn } from '~/lib/utils';
+import Accordion from '../_components/radix-ui-accordion/Accordion';
+import { ProductDetails } from '../../../ArrData/ProductDetails';
 
 export const DetailsFragment = graphql(
   `
@@ -86,11 +88,25 @@ export const Details = ({ product }: Props) => {
 
   const customFields = removeEdgesAndNodes(product.customFields);
 
-  const showPriceRange =
-    product.prices?.priceRange.min.value !== product.prices?.priceRange.max.value;
+  const showPriceRange = product.prices?.priceRange.min.value !== product.prices?.priceRange.max.value;
+
+  const edges = product.customFields.edges || []; // Fallback to an empty array if undefined
+
+  const ProductType = edges.filter(prop => prop.node.name === 'Product Type');
+  const ComfortLevel = edges.filter(prop => prop.node.name === 'Comfort Level');
+  const Assembly = edges.filter(prop => prop.node.name === 'Assembly');
+  const FlammabilityStandard = edges.filter(prop => prop.node.name === 'Flammability Standard');
+
+  // Using the spread operator to combine all arrays
+  const SpecificationArr = [
+    ...ProductType,
+    ...ComfortLevel,
+    ...Assembly,
+    ...FlammabilityStandard
+  ];
 
   return (
-    <div className='w-[35%]'>
+    <div className='xxs:w-[100%] lg:w-[35%]'>
       <div className='w-[100%] flex justify-between border-b border-[#707070] mb-1'>
         {product.brand && (
           <p className="mb-2 font-[200] uppercase text-[#707070] font-raleway">{product.brand.name}</p>
@@ -198,9 +214,27 @@ export const Details = ({ product }: Props) => {
       <ProductForm data={product} />
 
       {/* radix ui here */}
+      <Accordion description={product.description} specifications={SpecificationArr} measurement='' customFields={customFields} />
 
+      <div>
+        {ProductDetails && ProductDetails.map(val => {
+          return (
+            <div className='flex flex-row items-center mt-[15px]' key={val.id}>
+              <div className='flex items-center justify-center h-auto w-[15%]'>
+                <img className='w-[40%] my-[.5em] h-auto mx-[.5em]' src={val.icon} alt={val.title} />
+              </div>
+              <div className='flex justify-start w-[85%]'>
+                <div>
+                  <h3 className="mb-2 font-semibold text-[#132448] text-[14px]">{val.title}</h3>
+                  <p className='text-[#666] font-[200]'>{val.description}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
-      <div className="my-12">
+      {/* <div className="my-12">
         <h2 className="mb-4 text-xl font-bold md:text-2xl">{t('additionalDetails')}</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {Boolean(product.sku) && (
@@ -255,7 +289,7 @@ export const Details = ({ product }: Props) => {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
 
       <ProductSchema product={product} />
     </div>

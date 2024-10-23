@@ -16,6 +16,8 @@ const HeaderSlider = () => {
         //! Type assertion to let TypeScript know `slick` method exists
         ($('.headSlider') as any).slick({
             dots: false,
+            prevArrow: false,
+            nextArrow: false,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
@@ -58,7 +60,7 @@ const HeaderSlider = () => {
     //* BUTTON STYLING WILL BE ON GLOBAL CSS
 
     return (
-        <div className='bg-[#132448] xxs:hidden md:block'>
+        <div className='bg-[#132448] xxs:hidden md:block w-[100%]'>
             <div className="headSlider flex flex=row">
                 <div>
                     <span className='text-white flex flex-row !text-center'>

@@ -168,9 +168,9 @@ export const ProductForm = ({ data: product }: Props) => {
 
         {/* custom container */}
         <div className='w-[100%] flex bg-[#18253f] rounded-[5px] mt-[1.2rem] justify-evenly'>
-          <span className='text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Ships by:<span className='font-montserrat text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{formattedDate ? formattedDate : null}</span></span>
+          <span className='xxs:text-[12px] xl:text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Ships by:<span className='font-montserrat xxs:text-[12px] xl:text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{formattedDate ? formattedDate : null}</span></span>
           <div className='border-l-[2px] border-[#264da3] h-[30px] my-auto'></div>
-          <span className='text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Delivery:<span className='font-montserrat text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{description ? description : null}</span></span>
+          <span className='xxs:text-[12px] xl:text-[15px] text-center text-white tracking-[1px] m-auto py-[1rem]'>Delivery:<span className='font-montserrat xxs:text-[12px] xl:text-[15px] tracking-[0px] font-[600]'>&nbsp;&nbsp;{description ? description : null}</span></span>
         </div>
 
         <p className='flex text-[#707070] text-[14px] text-left font-[400]'>*To learn more about shipping, check out our&nbsp;<a className='text-[#264da3] font-[700] underline'>Shipment Transit Chart.</a></p>
@@ -185,6 +185,7 @@ export const ProductForm = ({ data: product }: Props) => {
               <span>{t('saveToWishlist')}</span>
             </Button>
           </div>
+
         </div>
       </form>
     </FormProvider>
