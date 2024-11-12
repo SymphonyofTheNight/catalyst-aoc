@@ -450,6 +450,7 @@ export default async function Home({ params: { locale } }: Props) {
           <img className='xl:h-[22.5rem] lg:h-[15.5rem] xxs:h-auto w-auto object-contain' src={hpcontent['bed-img']} />
         </div>
       </div>
+
       <div className='px-[7vw] my-[1.5rem] pb-[2rem]'>
         <div className='w-[100%] flex flex-col items-start justify-center xxs:flex lg:hidden'>
           <h2 className='text-[#132448] font-[700] leading-[24px] 2xl:text-[28px] xl:text-[25px] sm:text-[23px] xxs:text-[23px]'>
@@ -515,14 +516,14 @@ export default async function Home({ params: { locale } }: Props) {
         </div>
       </div>
 
-      <div id="stamped-main-widget"
+      {/* <div id="stamped-main-widget"
         data-product-id="##product.id##"
         data-name="##product.title##"
         data-url="##product.url##"
         data-image-url="##product.image##"
         data-description="##product.description##"
         data-product-sku="##product.handle##">
-      </div>
+      </div> */}
 
     </>
   );

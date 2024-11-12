@@ -67,7 +67,8 @@ const config = {
         "Blankets": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-blankets.png')",
         "Mattress": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-mattress-protector.png')",
         "Sheets": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/related-sheets.png')",
-        "custom-productpage-bg": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/stars-bg-.png?t=1652429372&_gl=1*1dk7e7c*_ga*ODk3ODY0MTgwLjE2NDg4MDI1OTE.*_ga_WS2VZYPC6G*MTY1MjQyODk2NS4xMDEuMS4xNjUyNDI5NjYxLjYw')"
+        "custom-productpage-bg": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/stars-bg-.png?t=1652429372&_gl=1*1dk7e7c*_ga*ODk3ODY0MTgwLjE2NDg4MDI1OTE.*_ga_WS2VZYPC6G*MTY1MjQyODk2NS4xMDEuMS4xNjUyNDI5NjYxLjYw')",
+        "icon-diff": "url('https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/starry-bg-200px.png')"
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],

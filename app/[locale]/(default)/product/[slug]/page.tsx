@@ -167,6 +167,16 @@ export default async function Product({ params, searchParams }: ProductPageProps
         </div>
       </div>
 
+      <div className='w-[85%] mt-[5rem] mx-auto text-center'>
+        <div className='bg-icon-diff py-[1.5rem] bg-cover bg-no-repeat bg-center'>
+          <h2 className='font-montserrat text-[#f8f9fa] font-[800] text-[25px] mt-[2.28571rem] mb-[.78571rem]'>The Iconic Difference</h2>
+          <p className='mt-[1rem] mb-[1.5rem] text-[#f8f9fa] leading-[2] tracking-[1]'>
+            Icon Sleep mattresses are not necessarily better. But compared to what the competition offer, we present the most <br />
+            reasonably priced package for the same quality. In short, we offer the same value for less.
+          </p>
+        </div>
+      </div>
+
       {/* <div className={cn('lg:col-span-2', 'px-[3vw]')}>
         <Description product={product} />
         <Warranty product={product} />
